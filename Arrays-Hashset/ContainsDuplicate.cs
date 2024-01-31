@@ -1,4 +1,7 @@
-﻿namespace AlgoDs.Arrays_Hashset;
+﻿using System.Collections;
+using System.Diagnostics;
+
+namespace AlgoDs.Arrays_Hashset;
 
 public class ContainsDuplicate
 {
@@ -124,18 +127,19 @@ public class SumTarget
      */
 
     public static int[] TwoSum(int target = 9)
-    {
-        int[] nums = {2, 7, 11, 15};
+    {        
+        int[] nums = { 1, 1, 1, 1, 4, 7, 2, 1, 1, 1, 1 };
 
         var values = new Dictionary<int, int>();
 
         for (int i = 0; i < nums.Length; i++)
         {
-            var diff = target - nums[i];
+            var difference = target - nums[i];
 
-            if (values.ContainsKey(diff))
-                return new int[] { values[diff], i };
-            else
+            if (values.ContainsKey(difference))
+                return new int[] { i, values[difference] };
+
+            else if (!values.ContainsKey(nums[i])) // skip if the num[i] already exists as a key
                 values.Add(nums[i], i);
         };
 
