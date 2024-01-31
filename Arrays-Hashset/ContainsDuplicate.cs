@@ -146,3 +146,28 @@ public class SumTarget
         return Array.Empty<int>();
     }
 }
+
+public class BestTimeToBuyandSell
+{
+    
+    public static int BestTimeToBuyandSellStock(int[] nums)
+    {
+        int[] prices = { 7, 1, 3, 4, 2, 42, 34 };
+        int profit = 0;
+        int leftPosition = 0;
+
+        for(int rightPosition = 1; rightPosition < prices.Length; rightPosition++)
+        {
+            if (prices[leftPosition] < prices[rightPosition])
+            {
+                profit = Math.Max(profit, prices[rightPosition] - prices[leftPosition]);
+            }
+            else
+            {
+                leftPosition = rightPosition;
+            }
+        }
+
+        return profit;
+    }
+}
