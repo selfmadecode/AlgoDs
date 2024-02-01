@@ -6,7 +6,7 @@ int[] nums = { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 };
 
 //var containsDuplicate = ContainsDuplicate.ContainsDuplicateSolution(nums);
 //var isAnagram = Anagram.IsAnagram();
-//var dd = SumTarget.TwoSum();
+var dd = SumTarget.TwoSum();
 Console.WriteLine("Hello, World!");
 
 
