@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace AlgoDs.Arrays_Hashset;
 
-public class ContainsDuplicate
+public partial class Questions
 {
     /*
      * Question:
@@ -35,10 +35,7 @@ public class ContainsDuplicate
         }
         return false;
     }
-}
 
-public class Anagram
-{
     /*
      * Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
@@ -102,10 +99,7 @@ public class Anagram
         //return string.Concat(charArray1) == string.Concat(charArray2);
 
     }
-}
 
-public class SumTarget
-{
     /*
      * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
        You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -145,10 +139,7 @@ public class SumTarget
 
         return Array.Empty<int>();
     }
-}
 
-public class BestTimeToBuyandSell
-{
     
     public static int BestTimeToBuyandSellStock(int[] nums)
     {
