@@ -161,4 +161,39 @@ public partial class Questions
 
         return profit;
     }
+
+    //    There is a malfunctioning keyboard where some letter keys do not work.All other keys on the keyboard work properly.
+    //Given a string text of words separated by a single space (no leading or trailing spaces) and a string brokenLetters of all distinct letter keys that are broken, return the number of words in text you can fully type using this keyboard.
+
+    //Example 1:
+
+    //Input: text = "hello world", brokenLetters = "ad"
+    //Output: 1
+    //Explanation: We cannot type "world" because the 'd' key is broken.
+
+    public static int CanBeTypedWords(string text = "hello world", string brokenLetters = "ad")
+    {
+        var brokenLetterCharacters = new HashSet<char>(brokenLetters);
+        //var count = text.Split(" ").Count(word => word.All(ch => !brokenLetterCharacters.Contains(ch)));
+
+        // best approach
+        int count = 0;
+        foreach (var word in text.Split(" "))
+        {
+            bool canBeTyped = true;
+            foreach (var ch in word)
+            {
+                if (brokenLetterCharacters.Contains(ch))
+                {
+                    canBeTyped = false;
+                    break;
+                }
+            }
+
+            if(canBeTyped)
+                count++;
+        }
+
+        return count;
+    }
 }
